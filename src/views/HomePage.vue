@@ -1,5 +1,4 @@
 <script setup></script>
-
 <template>
   <div class="brand">
     <img class="logo" src="logo.svg" alt="logo" />
@@ -7,12 +6,11 @@
     <img class="logo" src="logo.svg" alt="logo" />
   </div>
   <div class="categories">
-    <RouterLink v-for="n in 24" :key="n" :to="`/question/category/${n}`" class="category"
-      >Category - {{ n }}
+    <RouterLink v-for="n in 24" :key="n" :to="`/question/category/${n}`" class="category">
+      Category - {{ n }}
     </RouterLink>
   </div>
 </template>
-
 <style lang="postcss" scoped>
 .brand {
   @apply flex items-center justify-center gap-4;
