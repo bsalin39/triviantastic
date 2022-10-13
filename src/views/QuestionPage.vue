@@ -51,11 +51,10 @@ onMounted(async () => {
   answers.value = shuffle(answers.value)
 })
 </script>
-
 <template>
   <div v-if="question" class="question-container">
     <BaseTitle> {{ question.category }}</BaseTitle>
-    <p class="question">{{ question.question }}</p>
+    <p class="question" v-html="question.question" />
     <div class="answers">
       <div
         v-for="answer in answers"
@@ -63,16 +62,14 @@ onMounted(async () => {
         :class="colors.getColor(answer.id)"
         class="answer"
         @click="handleAnswer(answer.points)"
-      >
-        {{ answer.answer }}
-      </div>
+        v-html="answer.answer"
+      />
     </div>
     <DifficultyChip :difficulty="question.difficulty" />
   </div>
   <div v-else class="loading">Loading...</div>
   <NotificationAnswers v-if="showNotification" :correct="isCorrect" />
 </template>
-
 <style lang="postcss" scoped>
 .question-container {
   @apply flex h-full w-full flex-col items-center gap-8;
