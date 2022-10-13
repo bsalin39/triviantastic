@@ -28,7 +28,6 @@ onMounted(async () => {
     </RouterLink>
   </div>
 </template>
-
 <style lang="postcss" scoped>
 .categories {
   @apply grid flex-grow grid-cols-4 gap-12;

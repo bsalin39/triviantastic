@@ -10,7 +10,6 @@ import MainScore from '@/components/MainScore.vue'
   </main>
   <MainScore />
 </template>
-
 <style lang="postcss" scoped>
 main {
   @apply flex h-screen items-center justify-center bg-gradient-to-tr from-green-300 via-yellow-300 to-pink-300;
